@@ -1,7 +1,7 @@
 <template>
   <div>
     <div @click="startPop">点击弹框</div>
-    <pop-win v-show="isShowPop"></pop-win>
+    <pop-win :isShowPop="isShowPop"></pop-win>
 
     <vui-swiper
       height="171px"
