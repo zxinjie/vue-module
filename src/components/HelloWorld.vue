@@ -1,7 +1,9 @@
 <template>
   <div>
     <div @click="startPop">点击弹框</div>
-    <pop-win :isShowPop="isShowPop"></pop-win>
+    <pop-win v-model="isShowPop">
+      <content-view slot="content"></content-view>
+    </pop-win>
 
     <vui-swiper
       height="171px"
@@ -16,11 +18,13 @@
 <script>
 import vuiSwiper from "./vui-swiper";
 import PopWin from "./popWin";
+import contentView from "./contentView";
 export default {
   name: "HelloWorld",
   components: {
     PopWin,
-    vuiSwiper
+    vuiSwiper,
+    contentView
   },
   data() {
     return {
@@ -45,7 +49,9 @@ export default {
     };
   },
   methods: {
-    handleSwiperClick() {},
+    handleSwiperClick() {
+
+    },
     startPop() {
         this.isShowPop = !this.isShowPop
     }
